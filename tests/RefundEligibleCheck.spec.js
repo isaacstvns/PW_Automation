@@ -57,7 +57,7 @@ test('Refund Eligible Check', async ({page}) => {
 })
 
 
-test.only('Refund NOT Eligible Check', async ({page}) => {
+test('Refund NOT Eligible Check', async ({page}) => {
 
     //Login to app
     await login(page);
