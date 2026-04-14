@@ -19,7 +19,7 @@ test.beforeEach( async () => {
 })
 
 
-test.only('Browser Context-Validation Error Login', async ({page})=>{
+test('Browser Context-Validation Error Login', async ({page})=>{
 
     //Insert the token into local storage
     await page.addInitScript (value => {
