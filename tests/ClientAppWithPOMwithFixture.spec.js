@@ -2,11 +2,13 @@ const { test, expect } = require('@playwright/test');
 const { POManager } = require('../pageobjects/POManager');
 const placeOrderTestData = JSON.parse(JSON.stringify(require('../utils/PlaceOrderTestData.json')));
 
-test('Browser Context-Validation Error Login', async ({ page }) => {
+const{customtest} = require('../utils/test-base');
 
-    const productName = placeOrderTestData.productName;
-    const username = placeOrderTestData.username;
-    const password = placeOrderTestData.password;
+customtest('Client App - Place Order', async ({ page, testDataForOrder }) => {
+
+    const productName = testDataForOrder.productName;
+    const username = testDataForOrder.username;
+    const password = testDataForOrder.password;
 
     const poManager = new POManager(page);
     const loginPage = poManager.getLoginPage();
