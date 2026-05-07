@@ -1,5 +1,6 @@
 import{test, expect} from '@playwright/test'
 
+//test.describe.configure({mode: 'parallel'});
 test('More Validations in Playwright', async ({page})=>{    
 
     await page.goto('https://rahulshettyacademy.com/AutomationPractice/');
@@ -36,7 +37,7 @@ test("Screenshot and Visual Comparison", async ({page}) => {
     await expect(page.locator('#displayed-text')).not.toBeVisible();
 })
 
-test.only('Visual Comparison', async ({page}) => {
+test('Visual Comparison', async ({page}) => {
 
     await page.goto('https://google.com');
     await expect( await page.screenshot()).toMatchSnapshot('google.png');
